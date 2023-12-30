@@ -1,5 +1,4 @@
 const ul = document.getElementById("ingredients");
-const liArray = [];
 const ingredients = [
   "Potatoes",
   "Mushrooms",
@@ -9,10 +8,11 @@ const ingredients = [
   "Condiments",
 ];
 
-ingredients.forEach((ingredient) => {
-  const itemCreateLi = document.createElement("li");
-  itemCreateLi.classList.add("item");
-  itemCreateLi.textContent = ingredient;
-  liArray.push(itemCreateLi);
-  ul.append(...liArray);
+const markup = ingredients.map((ingredient) => {
+  const createEl = document.createElement("li");
+  createEl.textContent = ingredient;
+  createEl.classList.add("item");
+  createEl.style.listStyle = "none";
+  return createEl;
 });
+ul.append(...markup);

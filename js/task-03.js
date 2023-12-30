@@ -15,7 +15,11 @@ const images = [
   },
 ];
 
-images.forEach(({ url, alt }) => {
-  const markup = `<li><img src="${url}" alt="alt"></li>`;
-  gallery.insertAdjacentHTML("beforeend", markup);
-});
+const createMarkup = images
+  .map(
+    ({ url, alt }) => `<li><img src="${url}"
+ alt="${alt}"></li>`
+  )
+  .join("");
+
+gallery.insertAdjacentHTML("beforeend", createMarkup);
