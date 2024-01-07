@@ -8,11 +8,10 @@ function add(e) {
   if (logEl.password.value === "" || logEl.email.value === "") {
     alert("Вам необходимо заполнить все поля");
   } else {
-    const case1 =
-      {
-        email: logEl.email.value,
-        password: logEl.password.value,
-      }
+    const case1 = {
+      email: logEl.email.value,
+      password: logEl.password.value,
+    };
     console.log(case1);
     loginForm.reset();
   }
