@@ -2,11 +2,9 @@ const changeColor = document.querySelector(".change-color");
 const color = document.querySelector(".color");
 
 changeColor.addEventListener("click", () => {
-  const bodyCurrentColor = window.getComputedStyle(
-    document.body
-  ).backgroundColor;
-  color.textContent = bodyCurrentColor;
   document.body.style.backgroundColor = getRandomHexColor();
+  const currentBackgroundColor = window.getComputedStyle(document.body).backgroundColor
+  color.textContent = currentBackgroundColor;
 });
 
 function getRandomHexColor() {
@@ -14,3 +12,5 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
+
+
